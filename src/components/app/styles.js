@@ -20,4 +20,11 @@ export const GlobalStyle = createGlobalStyle`
     line-height: ${(props) => props.theme.lineHeight};
     color: ${(props) => props.theme.gray_800};
   }
-`
+
+  #root {
+    position: relative;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    height: 100vh;
+}
+`;
