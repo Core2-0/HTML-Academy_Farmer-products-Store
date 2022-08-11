@@ -1,13 +1,13 @@
 import React from "react";
 import OrderForm from "../../ui/order-form/order-form";
 import SelectProducts from "../../ui/select-products/select-products";
-import { StyledSection } from "./styles";
+import { StyledArticle } from "./styles";
 
 export default function Order({ products }) {
   return (
-    <StyledSection>
+    <StyledArticle>
       <SelectProducts products={products} />
       <OrderForm />
-    </StyledSection>
+    </StyledArticle>
   );
 }

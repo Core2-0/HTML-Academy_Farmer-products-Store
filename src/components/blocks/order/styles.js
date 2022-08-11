@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.section`
-  
+export const StyledArticle = styled.article`
+  max-width: 353px;
 `

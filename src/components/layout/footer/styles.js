@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
+  background-color: ${(props) => props.theme.white_50};
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
