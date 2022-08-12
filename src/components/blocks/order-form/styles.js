@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledArticle = styled.article`
+  /* height: 315px; */
   background-color: ${(props) => props.theme.white_50};
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04),

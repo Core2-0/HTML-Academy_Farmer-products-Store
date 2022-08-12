@@ -1,20 +1,25 @@
 import React from "react";
-import { StyledArticle } from "./styles";
+import { TitleSize } from "../title/title";
+import { Price, StyledArticle, StyledImg, StyledTitle } from "./styles";
 
-function ProductCard({ products }) {
+function ProductCard({
+  id,
+  title,
+  image,
+  alt,
+  price
+}) {
   return (
-    <ul>
-      {products.map((product) => (
-        <li key={product}>
-          <StyledArticle id={product.id}>
-            <img src="" alt="" />
-            <h4>{product.title}</h4>
-            <p>{product.description}</p>
-            <mark>400 руб. / 700 гр.</mark>
-          </StyledArticle>
-        </li>
-      ))}
-    </ul>
+    <StyledArticle id={id}>
+      <StyledImg
+        src={image}
+        alt={alt}
+        width={248}
+        height={248}
+      />
+      <StyledTitle as="h3" size={TitleSize.EXTRA_SMALL}>{title}</StyledTitle>
+      <Price>{price}</Price>
+    </StyledArticle>
   );
 }
 
