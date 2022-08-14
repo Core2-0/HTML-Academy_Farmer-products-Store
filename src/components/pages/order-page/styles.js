@@ -13,4 +13,5 @@ export const StyledSection = styled.section`
   padding-right: 90px;
   padding-left: 90px;
   width: ${(props) => props.theme.pageWidth};
+  height: 100%;
 `;

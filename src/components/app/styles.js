@@ -22,8 +22,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #root {
+    position: relative;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
-    min-height: 100vh;
+    height: 100vh;
 }
 `;

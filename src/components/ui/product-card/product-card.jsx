@@ -1,24 +1,20 @@
 import React from "react";
+import Tabs from "../../ui/tabs/tabs";
 import { TitleSize } from "../title/title";
-import { Price, StyledArticle, StyledImg, StyledTitle } from "./styles";
+import { StyledArticle, StyledImg, StyledTitle } from "./styles";
 
-function ProductCard({
-  id,
-  title,
-  image,
-  alt,
-  price
-}) {
+function ProductCard({ products, tabs }) {
+
   return (
-    <StyledArticle id={id}>
+    <StyledArticle>
       <StyledImg
-        src={image}
-        alt={alt}
+        src={products.image}
+        alt={products.alt}
         width={248}
         height={248}
       />
-      <StyledTitle as="h3" size={TitleSize.EXTRA_SMALL}>{title}</StyledTitle>
-      <Price>{price}</Price>
+      <StyledTitle as="h3" size={TitleSize.EXTRA_SMALL}>{products.title}</StyledTitle>
+      <Tabs tabs={tabs} />
     </StyledArticle>
   );
 }

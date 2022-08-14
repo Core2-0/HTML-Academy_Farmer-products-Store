@@ -1,23 +1,37 @@
 import React from "react";
+import { SwiperSlide } from "swiper/react";
+import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
+import "swiper/css";
+import "swiper/css/scrollbar";
 import ProductCard from "../../ui/product-card/product-card";
-import { Ul, Li } from "../../styled";
-import { StyledSection } from "./styles";
+import { StyledSection, StyledSwiper } from "./styles";
 
 function ProductsList({ products }) {
+  SwiperCore.use([Mousewheel, Pagination, Scrollbar])
+
   return (
     <StyledSection>
-      <Ul>
-      {products.map((product) => (
-        <Li key={product}>
-          <ProductCard
-            id={product.id}
-            image={product.image}
-            title={product.title}
-            price={product.price}
+      <StyledSwiper
+        autoHeight
+        spaceBetween={12}
+        direction="vertical"
+        slidesPerView="auto"
+        scrollbar={{ draggable: true }}
+        grabCursor={true}
+        mousewheel
+        // pagination={{
+        //   type: "fraction"
+        // }}
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <ProductCard
+            products={product}
+            tabs={product.tabs}
           />
-        </Li>
-      ))}
-    </Ul>
+          </SwiperSlide>
+        ))}
+      </StyledSwiper>
     </StyledSection>
   );
 }

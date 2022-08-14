@@ -4,7 +4,7 @@ import { Img } from "../../styled";
 
 export const StyledArticle = styled.article`
   display: grid;
-  grid-template-rows: repeat(4, min-content);
+  grid-template-rows: min-content 1fr;
   grid-template-columns: min-content 1fr;
   justify-items: start;
   box-sizing: border-box;
@@ -24,12 +24,4 @@ export const StyledImg = styled(Img)`
 
 export const StyledTitle = styled(Title)`
   margin-bottom: 16px;
-`;
-
-export const Price = styled.span`
-  font-weight: 700;
-  font-size: 14px;
-  background-color: ${(props) => props.theme.blue_50};
-  margin: 0;
-  padding: 4px 8px;
 `;

@@ -9,9 +9,8 @@ function SelectProducts({ products }) {
         <StyledTitle as="h3">Выберете продукты</StyledTitle>
         <Ul>
           {products.map((product) => (
-            <Li key={product}>
+            <Li key={product.id}>
               <Checkbox
-                value={product.id}
                 title={product.title}
               />
             </Li>
