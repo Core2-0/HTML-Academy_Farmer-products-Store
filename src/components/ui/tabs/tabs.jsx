@@ -1,28 +1,52 @@
 import React, { useState } from "react";
-import { Price, TabButton, TabContent, TabText, TitleList } from "./styles";
+import { Dl, Li } from "../../styled";
+import { Price, Specifications, StyledDd, StyledDt, TabButton, TabsWrapper, TabContent, TabText, TitleList } from "./styles";
 
 function Tabs({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <TabContent>
+    <>
       <TitleList>
         {tabs &&
           tabs.length &&
           tabs.map((tab, index) => {
             if (index === activeTab) {
               return (
-                <TabButton active key={tab.title}>{tab.title}</TabButton>
+                <Li key={tab.title}>
+                  <TabButton active>{tab.title}</TabButton>
+                </Li>
               );
             }
             return (
-              <TabButton key={tab.title} onClick={() => setActiveTab(index)}>{tab.title}</TabButton>
+              <Li key={tab.title}>
+                <TabButton onClick={() => setActiveTab(index)}>{tab.title}</TabButton>
+              </Li>
             );
           })}
       </TitleList>
-        <TabText>{tabs[activeTab].text}</TabText>
-        {tabs[activeTab].price ? <Price>{tabs[activeTab].price}</Price> : null}
-    </TabContent>
+
+      <TabContent>
+        {Array.isArray(tabs[activeTab].specifications) ? (
+          <Dl>
+            {tabs[activeTab].specifications.map((specification, index) => (
+              <Specifications key={index}>
+                <StyledDt>{specification.property}:&nbsp;</StyledDt>
+                <StyledDd>{specification.value}</StyledDd>
+              </Specifications>
+            ))}
+          </Dl>
+        ) : (
+          <TabText>{tabs[activeTab].specifications}</TabText>
+        )}
+      </TabContent>
+      {tabs[activeTab].price && tabs[activeTab].weight ?
+        <Price>
+          {tabs[activeTab].price}{" руб. / "}
+          {tabs[activeTab].weight}{" г."}
+        </Price>
+        : null}
+    </>
   );
 }
 

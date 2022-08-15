@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { P } from "../../styled";
+import { P, Dd, Ul } from "../../styled";
 
-export const TitleList = styled.div`
+export const TitleList = styled(Ul)`
   display: flex;
 `;
 
@@ -20,20 +20,46 @@ export const TabButton = styled.button`
   }
 `;
 
-export const TabContent = styled.div`
+export const TabsWrapper = styled.div`
   max-width: 400px;
-  height: 100%;
+  max-height: 100%;
+`;
+
+export const TabContent = styled.div`
+  max-height: 155px;
+  overflow-y: auto;
 `;
 
 export const TabText = styled(P)`
+  max-height: 105px;
   font-size: 14px;
-  margin-bottom: 14px;
 `;
 
 export const Price = styled.span`
+  position: absolute;
+  bottom: 0;
   font-weight: 700;
   font-size: 14px;
   background-color: ${(props) => props.theme.blue_50};
   margin: 0;
   padding: 6.5px 12px;
+`;
+
+export const Specifications = styled.div`
+  font-size: 14px;
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+export const StyledDt = styled.dt`
+  display: inline;
+  font-weight: 700;
+  flex-shrink: 0;
+`;
+
+export const StyledDd = styled(Dd)`
+  display: inline;
 `;

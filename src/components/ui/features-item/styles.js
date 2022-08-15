@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Img } from "../../styled/"
+import { Img, Dd } from "../../styled/"
 
 export const StyledFeatureItem = styled.article`
   width: 540px;
@@ -32,8 +32,7 @@ export const CardTitle = styled.dt`
   margin-bottom: 20px;
 `
 
-export const CardText = styled.dd`
+export const CardText = styled(Dd)`
   clear: both;
-  margin: 0;
   max-width: 460px;
 `

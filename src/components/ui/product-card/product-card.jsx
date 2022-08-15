@@ -1,7 +1,7 @@
 import React from "react";
 import Tabs from "../../ui/tabs/tabs";
 import { TitleSize } from "../title/title";
-import { StyledArticle, StyledImg, StyledTitle } from "./styles";
+import { StyledArticle, StyledImg, StyledTitle, CardContent } from "./styles";
 
 function ProductCard({ products, tabs }) {
 
@@ -13,8 +13,10 @@ function ProductCard({ products, tabs }) {
         width={248}
         height={248}
       />
-      <StyledTitle as="h3" size={TitleSize.EXTRA_SMALL}>{products.title}</StyledTitle>
-      <Tabs tabs={tabs} />
+      <CardContent>
+        <StyledTitle as="h3" size={TitleSize.EXTRA_SMALL}>{products.title}</StyledTitle>
+        <Tabs tabs={tabs} />
+      </CardContent>
     </StyledArticle>
   );
 }

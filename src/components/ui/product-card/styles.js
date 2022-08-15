@@ -3,10 +3,6 @@ import Title from "../title/title";
 import { Img } from "../../styled";
 
 export const StyledArticle = styled.article`
-  display: grid;
-  grid-template-rows: min-content 1fr;
-  grid-template-columns: min-content 1fr;
-  justify-items: start;
   box-sizing: border-box;
   padding: 20px;
   width: 727px;
@@ -16,10 +12,18 @@ export const StyledArticle = styled.article`
 `;
 
 export const StyledImg = styled(Img)`
-  grid-row: 1 / -1;
   width: 248px;
   height: 248px;
   margin-right: 20px;
+  object-fit: cover;
+  float: left;
+`;
+
+export const CardContent = styled.div`
+  position: relative;
+  height: 248px;
+  width: 400px;
+  float: right;
 `;
 
 export const StyledTitle = styled(Title)`

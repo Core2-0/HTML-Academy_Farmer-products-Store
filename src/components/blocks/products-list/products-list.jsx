@@ -1,13 +1,13 @@
 import React from "react";
 import { SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
+import SwiperCore, { Mousewheel, Scrollbar } from "swiper/core";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import ProductCard from "../../ui/product-card/product-card";
 import { StyledSection, StyledSwiper } from "./styles";
 
 function ProductsList({ products }) {
-  SwiperCore.use([Mousewheel, Pagination, Scrollbar])
+  SwiperCore.use([Mousewheel, Scrollbar])
 
   return (
     <StyledSection>
@@ -17,11 +17,8 @@ function ProductsList({ products }) {
         direction="vertical"
         slidesPerView="auto"
         scrollbar={{ draggable: true }}
-        grabCursor={true}
         mousewheel
-        // pagination={{
-        //   type: "fraction"
-        // }}
+        allowTouchMove={false}
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
