@@ -1,14 +1,15 @@
 import React from "react";
 import Button from "../../ui/button/button";
-import { StyledArticle } from "./styles";
+import { TitleSize } from "../../ui/title/title";
+import { PriceLabel, StyledArticle, StyledInput, StyledTitle, SumPrice } from "./styles";
 
 function OrderForm() {
   return (
     <StyledArticle>
-      <h3>Сделать заказ</h3>
-      <input type="text" placeholder="Введите адрес доставки" />
-      <p>Цена</p>
-      <p>1 200 руб.</p>
+      <StyledTitle as="h3">Сделать заказ</StyledTitle>
+      <StyledInput type="text" placeholder="Введите адрес доставки" />
+      <PriceLabel>Цена</PriceLabel>
+      <SumPrice as="h4" size={TitleSize.EXTRA_SMALL}>1 200 руб.</SumPrice>
       <Button minWidth={314} type="button">Купить</Button>
     </StyledArticle>
   );
