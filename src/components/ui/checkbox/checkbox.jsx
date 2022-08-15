@@ -9,9 +9,9 @@ const Label = styled.label`
 function Checkbox({
   labelComponent,
   selectValue,
+  title,
   name,
   value,
-  title,
   onChange,
   ...props
 }) {
@@ -20,8 +20,14 @@ function Checkbox({
 
   return (
     <Label>
-      <input value={value} type="checkbox"/>
-      {title}
+      <VisuallyHiddenInput
+        value={value}
+        checked={isChecked}
+        onChange={onChange}
+        {...props}
+        type="checkbox"
+      />
+      <LabelComponent $isChecked={isChecked}>{title}</LabelComponent>
     </Label>
   );
 }

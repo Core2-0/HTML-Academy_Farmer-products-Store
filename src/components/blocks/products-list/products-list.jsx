@@ -18,7 +18,6 @@ function ProductsList({ products }) {
         slidesPerView="auto"
         scrollbar={{ draggable: true }}
         mousewheel
-        allowTouchMove={false}
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
