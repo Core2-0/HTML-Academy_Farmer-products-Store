@@ -1,24 +1,47 @@
-import React, { useState } from "react";
-import CheckboxList from "../../ui/checkbox/checkbox-list";
+import React from "react";
+import Checkbox from "../../ui/checkbox/checkbox";
+import { Ul, Li } from "../../styled";
 import { CheckboxLabel, StyledArticle, StyledTitle } from "./styles";
 
-function SelectProducts({ products }) {
-  const [selectProduct, setSelectProduct ] = useState([]);
+function SelectProducts({
+  selectValues,
+  labelComponent,
+  options,
+  name,
+  onChange,
+  onClickLabel = () => { }
+}) {
+  const handleChange = (value) => {
+    const newValue = [...selectValues];
+    const indexValue = newValue.indexOf(value);
+    if (indexValue !== -1) {
+      newValue.splice(indexValue, 1);
+    } else {
+      newValue.push(value);
+    }
+    onChange && onChange(newValue);
+  };
 
   return (
-      <StyledArticle>
-        <StyledTitle as="h3">Выберете продукты</StyledTitle>
-        <CheckboxList
-          labelComponent={CheckboxLabel}
-          name={"select-products"}
-          options={products.map((product) => ({
-            value: product.id,
-            title: product.title,
-          }))}
-          selectValues={selectProduct}
-          onChange={setSelectProduct}
-        />
-      </StyledArticle>
+    <StyledArticle>
+      <StyledTitle as="h3">Выберете продукты</StyledTitle>
+      <Ul>
+        {options.map((option, index) => (
+          <Li key={option.value}>
+            <Checkbox
+              labelComponent={CheckboxLabel}
+              selectValues={selectValues}
+              isChecked={selectValues.includes(option.value)}
+              name={name}
+              value={option.value}
+              text={option.title}
+              onClick={(value) => onClickLabel(value, index)}
+              onChange={handleChange}
+            />
+          </Li>
+        ))}
+      </Ul>
+    </StyledArticle>
   );
 }
 

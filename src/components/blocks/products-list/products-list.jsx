@@ -6,12 +6,13 @@ import "swiper/css/scrollbar";
 import ProductCard from "../../ui/product-card/product-card";
 import { StyledSection, StyledSwiper } from "./styles";
 
-function ProductsList({ products }) {
+function ProductsList({ products, onSwiper }) {
   SwiperCore.use([Mousewheel, Scrollbar])
 
   return (
     <StyledSection>
       <StyledSwiper
+        onSwiper={onSwiper}
         autoHeight
         spaceBetween={12}
         direction="vertical"
