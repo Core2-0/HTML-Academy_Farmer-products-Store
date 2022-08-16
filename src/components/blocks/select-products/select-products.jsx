@@ -5,7 +5,6 @@ import { CheckboxLabel, StyledArticle, StyledTitle } from "./styles";
 
 function SelectProducts({
   selectValues,
-  labelComponent,
   options,
   name,
   onChange,

@@ -30,7 +30,3 @@ export const PriceLabel = styled.span`
   font-size: 14px;
   margin-bottom: 8px;
 `;
-
-export const SumPrice = styled(Title)`
-  margin-bottom: 32px;
-`;
