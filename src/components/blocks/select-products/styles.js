@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Title from "../../ui/title/title";
-import { Label } from "../../styled";
+import CheckIcon from "../../../assets/check_icon.svg";
 
 export const StyledArticle = styled.article`
   background-color: ${(props) => props.theme.white_50};
@@ -16,32 +16,34 @@ export const StyledTitle = styled(Title)`
   margin-bottom: 12px;
 `;
 
-export const ChecboxLabel = styled(Label)`
+export const CheckboxLabel = styled.span`
   position: relative;
+  display: flex;
+  height: 56px;
+  font-size: 18px;
+  text-align: left;
+  align-items: center;
   cursor: pointer;
-  padding: 15px 0;
 
   &::after {
-    position: absolute;
-    right: 0;
     content: "";
+    right: 0;
     display: block;
-    width: 24px;
-    height: 24px;
-    border: 1px solid black;
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    ${(props) =>
+      props.$isChecked
+        ? css`
+            background-color: #fc9b27;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-image: url(${CheckIcon});
+            background-repeat: no-repeat;
+            background-position: center center;
+          `
+        : css`
+            background-color: ${props.theme.backgroundColorGray};
+            border: 1px solid rgba(0, 0, 0, 0.1);
+          `}
   }
-
-  ${(props) =>
-    props.$isChecked &&
-    `
-    &:: after {
-      position: absolute;
-      right: 0;
-      content: "";
-      display: block;
-      width: 24px;
-      height: 24px;
-      background-color: red;
-    }
-  `}
 `;

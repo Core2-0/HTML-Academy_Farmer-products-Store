@@ -10,7 +10,7 @@ function OrderForm() {
       <StyledInput type="text" placeholder="Введите адрес доставки" />
       <PriceLabel>Цена</PriceLabel>
       <SumPrice as="h4" size={TitleSize.EXTRA_SMALL}>1 200 руб.</SumPrice>
-      <Button minWidth={314} type="button">Купить</Button>
+      <Button minWidth={314} type="submit">Купить</Button>
     </StyledArticle>
   );
 }

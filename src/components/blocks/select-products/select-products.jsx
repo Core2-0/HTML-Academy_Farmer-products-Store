@@ -1,29 +1,23 @@
 import React, { useState } from "react";
-import Checkbox from "../../ui/checkbox/checkbox";
-import { Ul, Li } from "../../styled";
-import { ChecboxLabel, StyledArticle, StyledTitle } from "./styles";
+import CheckboxList from "../../ui/checkbox/checkbox-list";
+import { CheckboxLabel, StyledArticle, StyledTitle } from "./styles";
 
 function SelectProducts({ products }) {
-  const [selectProduct, setSelectProduct ] = useState(products[0].id);
+  const [selectProduct, setSelectProduct ] = useState([]);
 
   return (
       <StyledArticle>
         <StyledTitle as="h3">Выберете продукты</StyledTitle>
-        <Ul>
-          {products.map((product) => (
-            <Li key={product.id}>
-              <Checkbox
-                labelComponent={ChecboxLabel}
-                selectValue={selectProduct}
-                value={product.id}
-                title={product.title}
-                onChange={(el) => {
-                  setSelectProduct(Number(el.target.value));
-                }}
-              />
-            </Li>
-          ))}
-        </Ul>
+        <CheckboxList
+          labelComponent={CheckboxLabel}
+          name={"select-products"}
+          options={products.map((product) => ({
+            value: product.id,
+            title: product.title,
+          }))}
+          selectValues={selectProduct}
+          onChange={setSelectProduct}
+        />
       </StyledArticle>
   );
 }
