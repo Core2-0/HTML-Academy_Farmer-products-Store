@@ -14,6 +14,12 @@ export default function OrderPage({ products }) {
     }
   };
 
+  const selectProductsList = selectProduct.map((id) =>
+    products.find((product) => product.id === id)
+  );
+
+  const fullPrice = selectProductsList.reduce((sum, product) => (sum + product.tabs[0].price), 0);
+
   return (
     <StyledSection>
       <SelectProducts
@@ -26,7 +32,7 @@ export default function OrderPage({ products }) {
         onChange={setSelectProduct}
         onClickLabel={handleOnClickProduct}
       />
-      <OrderForm />
+      <OrderForm value={fullPrice} />
       <ProductsList products={products} onSwiper={setSwiperRef} />
     </StyledSection>
   );

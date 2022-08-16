@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Price from "../../ui/price/price";
 import Title from "../../ui/title/title";
 
 export const StyledArticle = styled.article`
@@ -31,6 +32,6 @@ export const PriceLabel = styled.span`
   margin-bottom: 8px;
 `;
 
-export const SumPrice = styled(Title)`
+export const PriceValue = styled(Price)`
   margin-bottom: 32px;
 `;
