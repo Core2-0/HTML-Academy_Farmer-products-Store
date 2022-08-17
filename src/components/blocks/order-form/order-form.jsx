@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../ui/button/button";
-import { PriceLabel, StyledArticle, StyledInput, StyledTitle, PriceValue } from "./styles";
+import Price from "../../ui/price/price";
+import { PriceLabel, StyledArticle, StyledInput, StyledTitle } from "./styles";
 
 function OrderForm({ value }) {
   return (
@@ -8,7 +9,7 @@ function OrderForm({ value }) {
       <StyledTitle as="h3">Сделать заказ</StyledTitle>
       <StyledInput type="text" placeholder="Введите адрес доставки" />
       <PriceLabel>Цена</PriceLabel>
-      <PriceValue value={value} />
+      <Price value={value} />
       <Button minWidth={314} type="submit">Купить</Button>
     </StyledArticle>
   );

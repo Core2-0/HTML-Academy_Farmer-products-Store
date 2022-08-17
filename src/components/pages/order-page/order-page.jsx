@@ -18,7 +18,7 @@ export default function OrderPage({ products }) {
     products.find((product) => product.id === id)
   );
 
-  const fullPrice = selectProductsList.reduce((sum, product) => (sum + product.tabs[0].price), 0);
+  const fullPrice = selectProductsList.reduce((sum, product) => sum + Number(product.tabs[0].price), 0);
 
   return (
     <StyledSection>
