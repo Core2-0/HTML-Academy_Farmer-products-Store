@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Price from "../../ui/price/price";
 import Title from "../../ui/title/title";
 
 export const StyledArticle = styled.article`
@@ -17,7 +16,7 @@ export const StyledTitle = styled(Title)`
   margin-bottom: 24px;
 `;
 
-export const StyledInput = styled.input`
+export const AddressInput = styled.input`
   width: 100%;
   box-sizing: border-box;
   padding: 14px 12px;
