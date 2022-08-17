@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
-import MainPage from "../../pages/main-page/main-page";
 import { StyledMain } from "./styles";
+import { Outlet } from "react-router-dom";
 
 export default function PageWrapper({ ...prop }) {
   return (
     <>
       <Header />
       <StyledMain>
-        <MainPage {...prop} />
+        <Outlet />
       </StyledMain>
       <Footer />
     </>
