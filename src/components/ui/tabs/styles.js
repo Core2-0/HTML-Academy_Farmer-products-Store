@@ -14,10 +14,6 @@ export const TabButton = styled.button`
   background-color: ${(props) => (props.active ? props.theme.green_600 : props.theme.gray_150)};
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-
-  &:last-child {
-    margin-right: 0;
-  }
 `;
 
 export const TabsWrapper = styled.div`

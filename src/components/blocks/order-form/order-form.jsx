@@ -3,7 +3,14 @@ import Button from "../../ui/button/button";
 import Price from "../../ui/price/price";
 import { PriceLabel, StyledArticle, AddressInput, StyledTitle } from "./styles";
 
-function OrderForm({ value, address, onChange, onClick, disInput }) {
+function OrderForm({
+  value,
+  address,
+  onChange,
+  onClick,
+  disInput,
+  isSelectProducts
+}) {
 
   return (
     <StyledArticle>
@@ -21,6 +28,7 @@ function OrderForm({ value, address, onChange, onClick, disInput }) {
         onClick={onClick}
         minWidth={314}
         type="submit"
+        disabled={!(isSelectProducts.length && address)}
       >
         Купить
       </Button>

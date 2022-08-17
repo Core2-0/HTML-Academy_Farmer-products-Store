@@ -4,6 +4,7 @@ import SelectProducts from "../../blocks/select-products/select-products";
 import ProductsList from "../../blocks/products-list/products-list";
 import { StyledSection } from "./styles";
 import BuyPopup from "../../blocks/buy-popup/buy-popup";
+import Button from "../../ui/button/button";
 
 export default function OrderPage({ products }) {
   const [selectProduct, setSelectProduct] = useState([]);
@@ -24,7 +25,7 @@ export default function OrderPage({ products }) {
   const fullPrice = selectProductsList.reduce((sum, product) => sum + Number(product.price), 0);
 
 
-  return (
+  return products && products.length ? (
     <StyledSection>
       <SelectProducts
         name={"select-products"}
@@ -35,14 +36,15 @@ export default function OrderPage({ products }) {
         selectValues={selectProduct}
         onChange={setSelectProduct}
         onClickLabel={handleOnClickProduct}
-        disInput = {isShowPopup}
+        disInput={isShowPopup}
       />
       <OrderForm
         value={fullPrice}
         address={address}
         onChange={(e) => setAddress(e.target.value)}
         onClick={() => setIsShowPopup(true)}
-        disInput = {isShowPopup ? true : false}
+        disInput={isShowPopup ? true : false}
+        isSelectProducts={selectProduct}
       />
       <ProductsList products={products} onSwiper={setSwiperRef} />
       <BuyPopup
@@ -53,5 +55,8 @@ export default function OrderPage({ products }) {
         selectProducts={selectProductsList}
       />
     </StyledSection>
-  );
+  ) : <div>
+    <h2>Продукты были слишком вкусные и их разобрали</h2>
+    <Button link="/">Вернутся на главную</Button>
+  </div>
 }
