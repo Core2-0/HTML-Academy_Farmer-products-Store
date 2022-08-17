@@ -10,7 +10,11 @@ box-shadow: 0px 10px 20px rgba(0,0,0,0.04),
             0px 2px 6px rgba(0,0,0,0.04),
             0px 0px 1px rgba(0,0,0,0.04);
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 35%;
   z-index: 100;
+`;
+
+export const Close = styled(Button)`
+  text-align: center;
 `;

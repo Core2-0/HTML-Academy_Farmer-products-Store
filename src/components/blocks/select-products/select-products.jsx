@@ -8,7 +8,8 @@ function SelectProducts({
   options,
   name,
   onChange,
-  onClickLabel = () => { }
+  disInput,
+  onClickLabel = () => { },
 }) {
   const handleChange = (value) => {
     const newValue = [...selectValues];
@@ -36,6 +37,7 @@ function SelectProducts({
               text={option.title}
               onClick={(value) => onClickLabel(value, index)}
               onChange={handleChange}
+              disInput={disInput ? true : false}
             />
           </Li>
         ))}

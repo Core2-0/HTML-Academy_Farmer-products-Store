@@ -9,6 +9,7 @@ function Checkbox({
   value,
   text,
   onChange,
+  disInput,
   ...props
 }) {
   const LabelComponent = labelComponent;
@@ -22,6 +23,7 @@ function Checkbox({
         onChange={() => onChange(value)}
         {...props}
         type="checkbox"
+        disabled={disInput}
       />
       <LabelComponent onClick={() => onClick(value)} $isChecked={isChecked}>
         {text}

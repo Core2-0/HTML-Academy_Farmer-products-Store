@@ -1,37 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../ui/button/button";
 import Price from "../../ui/price/price";
-import BuyPopup from "../buy-popup/buy-popup";
 import { PriceLabel, StyledArticle, AddressInput, StyledTitle } from "./styles";
 
-function OrderForm({ value }) {
-  const [address, setAddress] = useState("");
-  const [isShowPopup, setIsShowPopup] = useState(false);
+function OrderForm({ value, address, onChange, onClick, disInput }) {
 
   return (
     <StyledArticle>
       <StyledTitle as="h3">Сделать заказ</StyledTitle>
       <AddressInput
         value={address}
-        onChange={(e) => setAddress(e.target.value)}
+        onChange={onChange}
         type="text"
         placeholder="Введите адрес доставки"
+        disabled={disInput}
       />
       <PriceLabel>Цена</PriceLabel>
       <Price value={value} />
       <Button
-        onClick={() => setIsShowPopup(true)}
+        onClick={onClick}
         minWidth={314}
         type="submit"
       >
         Купить
       </Button>
-      <BuyPopup
-        isShow={isShowPopup}
-        onClose={() => setIsShowPopup(false)}
-        price={value}
-        address={address}
-      />
+
     </StyledArticle>
   );
 }

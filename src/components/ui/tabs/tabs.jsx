@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Dl, Li } from "../../styled";
-import { Price, Specifications, StyledDd, StyledDt, TabButton, TabsWrapper, TabContent, TabText, TitleList } from "./styles";
+import { Li } from "../../styled";
+import { TabButton, TitleList } from "./styles";
+import TabsItem from "./tabs-item";
 
-function Tabs({ tabs }) {
+function Tabs({ products, tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -25,27 +26,11 @@ function Tabs({ tabs }) {
             );
           })}
       </TitleList>
-
-      <TabContent>
-        {Array.isArray(tabs[activeTab].specifications) ? (
-          <Dl>
-            {tabs[activeTab].specifications.map((specification, index) => (
-              <Specifications key={index}>
-                <StyledDt>{specification.property}:&nbsp;</StyledDt>
-                <StyledDd>{specification.value}</StyledDd>
-              </Specifications>
-            ))}
-          </Dl>
-        ) : (
-          <TabText>{tabs[activeTab].specifications}</TabText>
-        )}
-      </TabContent>
-      {tabs[activeTab].price && tabs[activeTab].weight ?
-        <Price>
-          {tabs[activeTab].price}{" руб. / "}
-          {tabs[activeTab].weight}{" г."}
-        </Price>
-        : null}
+      <TabsItem
+        products={products}
+        tabs={tabs}
+        activeTab={activeTab}
+      />
     </>
   );
 }

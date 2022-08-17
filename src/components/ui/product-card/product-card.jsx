@@ -15,7 +15,7 @@ function ProductCard({ products, tabs }) {
       />
       <CardContent>
         <StyledTitle as="h3" size={TitleSize.EXTRA_SMALL}>{products.title}</StyledTitle>
-        <Tabs tabs={tabs} />
+        <Tabs products={products} tabs={tabs} />
       </CardContent>
     </StyledArticle>
   );
