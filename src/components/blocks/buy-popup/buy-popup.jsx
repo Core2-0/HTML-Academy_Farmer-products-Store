@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Close, Wrapper } from "./styles";
+import { Close, PopupTitle, Wrapper } from "./styles";
 
 function BuyPopup({
   isShow,
@@ -23,7 +23,7 @@ function BuyPopup({
 
   return isShow ? (
     <Wrapper>
-      <h2>Спасибо за заказ!</h2>
+      <PopupTitle>Спасибо за заказ!</PopupTitle>
       <span>Вы купили: </span>
       <ul>
         {selectProducts.map((product) =>

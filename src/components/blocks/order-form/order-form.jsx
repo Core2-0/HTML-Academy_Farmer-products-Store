@@ -21,6 +21,7 @@ function OrderForm({
         type="text"
         placeholder="Введите адрес доставки"
         disabled={disInput}
+        required
       />
       <PriceLabel>Цена</PriceLabel>
       <Price value={value} />
