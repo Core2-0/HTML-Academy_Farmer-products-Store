@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledForm = styled.form`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: min-content 1fr;

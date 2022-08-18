@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import OrderForm from "../../blocks/order-form/order-form";
 import SelectProducts from "../../blocks/select-products/select-products";
 import ProductsList from "../../blocks/products-list/products-list";
-import { StyledSection } from "./styles";
+import { StyledForm } from "./styles";
 import BuyPopup from "../../blocks/buy-popup/buy-popup";
 import Button from "../../ui/button/button";
 
@@ -26,7 +26,7 @@ export default function OrderPage({ products }) {
 
 
   return products && products.length ? (
-    <StyledSection>
+    <StyledForm>
       <SelectProducts
         name={"select-products"}
         options={products.map((product) => ({
@@ -54,7 +54,7 @@ export default function OrderPage({ products }) {
         address={address}
         selectProducts={selectProductsList}
       />
-    </StyledSection>
+    </StyledForm>
   ) : <div>
     <h2>Продукты были слишком вкусные и их разобрали</h2>
     <Button link="/">Вернутся на главную</Button>
