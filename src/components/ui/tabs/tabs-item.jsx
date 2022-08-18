@@ -3,7 +3,7 @@ import { Price, Specifications, StyledDd, StyledDt, TabContent, TabText } from "
 import { Dl } from "../../styled";
 
 function TabsItem({ products, tabs, activeTab }) {
-  
+
   return (
     <>
     <TabContent>
