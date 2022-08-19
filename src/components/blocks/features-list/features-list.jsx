@@ -4,9 +4,8 @@ import Button from "../../ui/button/button";
 import { StyledSection, StyledTitle, FeaturesListWrapper, ListItem } from "./styles";
 import { Ul } from "../../styled/"
 
-function FeaturesList({
-  features
-}) {
+function FeaturesList({ features }) {
+  
   return features && features.length ? (
     <StyledSection>
       <StyledTitle as="h2">Почему фермерские продукты лучше?</StyledTitle>

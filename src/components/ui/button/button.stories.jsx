@@ -10,6 +10,6 @@ export default {
 export const ExampleButton = Template.bind({});
 
 ExampleButton.args = {
-  children: "Test",
+  children: "Button",
   minWidth: 265,
 }

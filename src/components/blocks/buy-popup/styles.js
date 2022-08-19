@@ -11,8 +11,9 @@ box-shadow: 0px 10px 20px rgba(0,0,0,0.04),
             0px 2px 6px rgba(0,0,0,0.04),
             0px 0px 1px rgba(0,0,0,0.04);
   position: fixed;
-  top: 30%;
-  left: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 100;
 `;
 

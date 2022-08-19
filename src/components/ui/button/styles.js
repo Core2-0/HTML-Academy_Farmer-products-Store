@@ -12,7 +12,7 @@ export const StyledButton = styled(Link)`
   color: ${(props) => props.theme.white_50};
   background-color: ${(props) => props.theme.orange_500};
   width: ${(props) => `${props.$minWidth}px` || "100%"};
-  padding: 18px 10px;
+  padding: 16.5px 10px;
 
   &:hover,
   &:active {
