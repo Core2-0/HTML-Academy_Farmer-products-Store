@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body,
   html {
-    margin: 0;
+    margin: 0 0 0 calc(100vw - 100%);
   }
 
   body {
