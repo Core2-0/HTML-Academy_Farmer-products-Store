@@ -31,5 +31,5 @@ https://dreamy-tartufo-f3bf6e.netlify.app/
 <img src="./readme_assets/main-page.jpg" />
 
 ### Страница заказа
-<img src="./readme_assets/order-page.jpg" />
+<img src="./readme_assets/order-page.gif" />
 
