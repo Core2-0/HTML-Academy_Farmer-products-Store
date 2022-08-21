@@ -21,6 +21,7 @@
 
 * Установка зависимостей: `npm i`
 * Сборка проекта: `npm run build`
+* Запуск storybook: `npm run storybook`
 * Запуск локального сервера: `npm start`
 
 ## Обзор проекта
