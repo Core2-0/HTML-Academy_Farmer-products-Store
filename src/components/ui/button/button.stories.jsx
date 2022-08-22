@@ -13,3 +13,5 @@ ExampleButton.args = {
   children: "Button",
   minWidth: 265,
 }
+
+ExampleButton.argTypes = { onClick: { action: "clicked" } }
