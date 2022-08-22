@@ -11,7 +11,7 @@ const Template = (args) => {
   const [value, setValue] = useState([]);
   const [checked, setChecked] = useState(true);
 
-  return <Checkbox width={200} {...args} value={value} isChecked={checked} onChange={() => setChecked(!checked)}  onClick={setValue} />;
+  return <Checkbox {...args} value={value} isChecked={checked} onChange={() => setChecked(!checked)}  onClick={setValue} />;
 }
 
 export const TemplateCheckbox = Template.bind({})
